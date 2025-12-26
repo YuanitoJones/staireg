@@ -1,5 +1,6 @@
 'use client'
-import { For, Link, Tabs } from "@chakra-ui/react";
+import { For, Tabs } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { usePathname, } from "next/navigation";
 import React from "react";
 
@@ -21,10 +22,10 @@ export const LinkedTabs = React.forwardRef<HTMLElement, ITabs>(
             <Tabs.List>
                 <For each={tabscontent}>
                     {(item)=>(
-                        <Tabs.Trigger value={item.value} key={item.value} asChild>
-                            <Link unstyled href={item.value}>
+                        <Tabs.Trigger value={item.value} key={item.value}>
+                            <NextLink href={item.value}>
                             {item.title}
-                            </Link>
+                            </NextLink>
                         </Tabs.Trigger>)}
                 </For>
                 <Tabs.Indicator
