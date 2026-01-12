@@ -1,7 +1,10 @@
-import MyAccountPageView from "./myAccount.view"
+"use client";
+import { useMyAccountLogic } from "./myAccount.logic";
+import MyAccountPageView from "./myAccount.view";
 
-const MyAccount = ()=>{
-    return <MyAccountPageView/>
-}
+const MyAccount = () => {
+   const logic = useMyAccountLogic();
+   return <MyAccountPageView {...logic} />;
+};
 
-export default MyAccount
+export default MyAccount;
